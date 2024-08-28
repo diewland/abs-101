@@ -1,5 +1,5 @@
 # Abstract 101
-How to build and deploy smart contracts on Abstract Chain.
+Learn how to build and deploy smart contracts on Abstract Chain.
 
 References:
  * https://hardhat.org/hardhat-runner/docs/getting-started
