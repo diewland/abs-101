@@ -20,6 +20,9 @@ npm install
 npx hardhat compile --network abstractTestnet
 ```
 
+*** add .env !!! BEFORE PRIVATE KEY !!!
+*** edit deployer address in deploy.ts ***
+
 ### 4. Deploy contract
 ```
 npx hardhat deploy-zksync --script deploy.ts --network abstractTestnet
@@ -29,10 +32,14 @@ output will display as
 HelloABS was deployed to <CONTRACT_ADDRESS>
 ```
 
+*** keep contract, deployer address in next step ***
+
 ### 5. Verify contract
 ```
 npx hardhat verify --network abstractTestnet <CONTRACT_ADDRESS> <DEPLOYER_ADDRESS>
 ```
+
+*** NEXT: interact with contract ***
 
 ### References
  * https://hardhat.org/hardhat-runner/docs/getting-started
