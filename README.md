@@ -21,12 +21,12 @@ PRIVATE_KEY='<YOUR-PRIVATE-KEY>'
 ```
 
 ### 4. Update wallet address on deploy script
-`deploy/deploy.ts`
+`deploy/deploy.ts` line 22
 ```ts
 19
 20   // Deploy this contract. The returned object will be of a `Contract` type,
 21   // similar to the ones in `ethers`.
-22   const tokenContract = await deployer.deploy(artifact, [ "<YOUR-WALLET-ADDRESS>" ]); <-- ***
+22   const tokenContract = await deployer.deploy(artifact, [ "<YOUR-WALLET-ADDRESS>" ]);
 23
 ```
 
