@@ -50,7 +50,7 @@ npx hardhat verify --network abstractTestnet <CONTRACT_ADDRESS> <YOUR-WALLET-ADD
 ```
 
 ### 8. Interact with contract
-soon
+[click](https://github.com/diewland/abstract-101/tree/master/contracts)
 
 ### References
  * https://hardhat.org/hardhat-runner/docs/getting-started
