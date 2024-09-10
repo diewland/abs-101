@@ -6,40 +6,51 @@ Learn how to build and deploy smart contracts on Abstract Chain.
  * [Node.js v18.0.0+](https://nodejs.org/en/download/package-manager)
 
 ### 1. Checkout code
-```
+```sh
 git clone https://github.com/diewland/abstract-101.git && cd abstract-101
 ```
 
 ### 2. Install dependencies
-```
+```sh
 npm install
 ```
-
-### 3. Compile contract
+### 3. Create `.env` file
+⚠️ DO NOT USE A PRIVATE KEY ASSOCIATED WITH REAL FUNDS. CREATE A NEW WALLET FOR THIS STEP.
+```sh
+PRIVATE_KEY='<YOUR-PRIVATE-KEY>'
 ```
+
+### 4. Update wallet address on deploy script
+`deploy/deploy.ts` line 22
+```ts
+19
+20   // Deploy this contract. The returned object will be of a `Contract` type,
+21   // similar to the ones in `ethers`.
+22   const tokenContract = await deployer.deploy(artifact, [ "<YOUR-WALLET-ADDRESS>" ]);
+23
+```
+
+### 5. Compile contract
+```sh
 npx hardhat compile --network abstractTestnet
 ```
 
-*** add .env !!! BEFORE PRIVATE KEY !!!
-*** edit deployer address in deploy.ts ***
-
-### 4. Deploy contract
-```
+### 6. Deploy contract
+```sh
 npx hardhat deploy-zksync --script deploy.ts --network abstractTestnet
 ```
-output will display as
-```
+output will be like this, `CONTRACT_ADDRESS` will be used in the next step
+```sh
 HelloABS was deployed to <CONTRACT_ADDRESS>
 ```
 
-*** keep contract, deployer address in next step ***
-
-### 5. Verify contract
-```
-npx hardhat verify --network abstractTestnet <CONTRACT_ADDRESS> <DEPLOYER_ADDRESS>
+### 7. Verify contract
+```sh
+npx hardhat verify --network abstractTestnet <CONTRACT_ADDRESS> <YOUR-WALLET-ADDRESS>
 ```
 
-*** NEXT: interact with contract ***
+### 8. Interact with contract
+soon
 
 ### References
  * https://hardhat.org/hardhat-runner/docs/getting-started
